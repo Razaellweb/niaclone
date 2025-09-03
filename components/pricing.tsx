@@ -7,47 +7,46 @@ import { CircleCheck } from "lucide-react";
 const plans = [
   {
     name: "Starter",
-    price: 19,
-    description:
-      "Get 20 AI-generated portraits with 2 unique styles and filters.",
-    features: [
-      "5 hours turnaround time",
-      "20 AI portraits",
-      "Choice of 2 styles",
-      "Choice of 2 filters",
-      "2 retouch credits",
-    ],
-    buttonText: "Get 20 portraits in 5 hours",
-  },
-  {
-    name: "Advanced",
     price: 29,
-    isRecommended: true,
     description:
-      "Get 50 AI-generated portraits with 5 unique styles and filters.",
+      "For individuals and small teams getting started with AI-powered product discovery.",
     features: [
-      "3 hours turnaround time",
-      "50 AI portraits",
-      "Choice of 5 styles",
-      "Choice of 5 filters",
-      "5 retouch credits",
+      "1 seat included",
+      "Unlimited product indexing",
+      "Personalized recommendations",
+      "Slack, Zapier, Notion integrations",
+      "Email support",
     ],
-    buttonText: "Get 50 portraits in 3 hours",
-    isPopular: true,
+    buttonText: "Start free trial",
   },
   {
-    name: "Premium",
+    name: "Growth",
     price: 49,
+    isPopular: true,
     description:
-      "Get 100 AI-generated portraits with 10 unique styles and filters.",
+      "Best for growing teams who need advanced integrations and collaboration.",
     features: [
-      "1-hour turnaround time",
-      "100 AI portraits",
-      "Choice of 10 styles",
-      "Choice of 10 filters",
-      "10 retouch credits",
+      "Everything in Starter",
+      "Up to 10 seats",
+      "API access",
+      "Advanced analytics",
+      "Priority support",
     ],
-    buttonText: "Get 100 portraits in 1 hour",
+    buttonText: "Start free trial",
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    description:
+      "Custom solutions for large organizations and advanced security needs.",
+    features: [
+      "Unlimited seats",
+      "Dedicated onboarding",
+      "Custom integrations",
+      "SAML/SSO",
+      "Dedicated support",
+    ],
+    buttonText: "Contact sales",
   },
 ];
 
@@ -62,20 +61,20 @@ const Pricing = () => {
           <div
             key={plan.name}
             className={cn(
-              "relative bg-accent/50 border p-7 rounded-xl lg:rounded-none lg:first:rounded-l-xl lg:last:rounded-r-xl",
+              "relative bg-card border p-7 rounded-xl lg:rounded-none lg:first:rounded-l-xl lg:last:rounded-r-xl",
               {
-                "bg-background border-[2px] border-primary py-12 !rounded-xl":
+                "bg-accent/20 border-[2px] border-accent py-12 !rounded-xl shadow-xl":
                   plan.isPopular,
               }
             )}
           >
             {plan.isPopular && (
-              <Badge className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2">
+              <Badge className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-accent text-accent-foreground">
                 Most Popular
               </Badge>
             )}
             <h3 className="text-lg font-medium">{plan.name}</h3>
-            <p className="mt-2 text-4xl font-bold">${plan.price}</p>
+            <p className="mt-2 text-4xl font-bold">{typeof plan.price === 'number' ? `$${plan.price}/mo` : plan.price}</p>
             <p className="mt-4 font-medium text-muted-foreground">
               {plan.description}
             </p>
@@ -83,7 +82,7 @@ const Pricing = () => {
             <ul className="space-y-2">
               {plan.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-2">
-                  <CircleCheck className="h-4 w-4 mt-1 text-green-600" />
+                  <CircleCheck className="h-4 w-4 mt-1 text-accent" />
                   {feature}
                 </li>
               ))}
@@ -91,9 +90,14 @@ const Pricing = () => {
             <Button
               variant={plan.isPopular ? "default" : "outline"}
               size="lg"
-              className="w-full mt-6 rounded-full"
+              className={cn("w-full mt-6 rounded-full", plan.isPopular ? "bg-accent text-accent-foreground hover:bg-accent/80" : "")}
+              asChild={plan.buttonText === "Start free trial"}
             >
-              {plan.buttonText}
+              {plan.buttonText === "Start free trial" ? (
+                <a href="/signup">{plan.buttonText}</a>
+              ) : (
+                plan.buttonText
+              )}
             </Button>
           </div>
         ))}

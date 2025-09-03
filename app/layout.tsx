@@ -1,53 +1,53 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Work_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const workSans = Work_Sans({
+  variable: "--font-work-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Beautiful Shadcn UI Landing Page",
+  title: "NiaClone – AI Product Discovery for Builders",
   description:
-    "A beautiful landing page built with Shadcn UI, Next.js 15, Tailwind CSS, and Shadcn UI Blocks.",
+    "NiaClone is a YC-quality AI-powered product discovery platform for startups and PMs. Find the right tools faster with personalized recommendations and deep product insights.",
   keywords: [
-    "Shadcn UI Landing Page",
-    "Shadcn UI Blocks",
-    "Shadcn UI",
-    "Landing Page",
-    "Tailwind CSS Landing Page",
-    "Beautiful Shadcn UI Landing Page",
-    "Next.js 15 Landing Page",
-    "Simple Landing Page",
-    "Landing Page Template",
-    "Landing Page Design",
+    "NiaClone",
+    "AI product discovery",
+    "YC",
+    "startup tools",
+    "product management",
+    "personalized recommendations",
+    "SaaS discovery",
+    "YC-inspired",
+    "trynia.ai",
   ],
   openGraph: {
     type: "website",
-    siteName: "Shadcn Landing Page",
+    siteName: "NiaClone",
     locale: "en_US",
-    url: "https://shadcn-landing-page.vercel.app",
-    title: "Shadcn Landing Page",
+    url: "https://niaclone.com",
+    title: "NiaClone – AI Product Discovery for Builders",
     description:
-      "A beautiful landing page built with Shadcn UI, Next.js 15, Tailwind CSS, and Shadcn UI Blocks.",
+      "NiaClone is a YC-quality AI-powered product discovery platform for startups and PMs. Find the right tools faster with personalized recommendations and deep product insights.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image-niaclone.jpg",
         width: 1200,
         height: 630,
-        alt: "Shadcn UI Landing Page Preview",
+        alt: "NiaClone Landing Page Preview",
       },
     ],
   },
   authors: [
     {
-      name: "Akash Moradiya",
-      url: "https://shadcnui-blocks.com",
+      name: "NiaClone Team",
+      url: "https://niaclone.com",
     },
   ],
-  creator: "Akash Moradiya",
+  creator: "NiaClone Team",
   icons: [
     {
       rel: "icon",
@@ -96,7 +96,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.className} antialiased`}>
+      <body className={`${workSans.className} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>

@@ -9,34 +9,34 @@ import { PlusIcon } from "lucide-react";
 
 const faq = [
   {
-    question: "What is your return policy?",
+    question: "How does NiaClone personalize product recommendations?",
     answer:
-      "You can return unused items in their original packaging within 30 days for a refund or exchange. Contact support for assistance.",
+      "NiaClone uses advanced AI to analyze your role, tech stack, and use case, surfacing the most relevant tools for your needs.",
   },
   {
-    question: "How do I track my order?",
+    question: "What integrations are available?",
     answer:
-      "Track your order using the link provided in your confirmation email, or log into your account to view tracking details.",
+      "NiaClone integrates with Slack, Zapier, Notion, Google Workspace, and offers API access for workflow automation.",
   },
   {
-    question: "Do you ship internationally?",
+    question: "How is pricing structured?",
     answer:
-      "Yes, we ship worldwide. Shipping fees and delivery times vary by location, and customs duties may apply for some countries.",
+      "We offer simple, pay-per-seat pricing with unlimited indexing and access to all features. See our pricing section for details.",
   },
   {
-    question: "What payment methods do you accept?",
+    question: "Is my data private and secure?",
     answer:
-      "We accept Visa, MasterCard, American Express, PayPal, Apple Pay, and Google Pay, ensuring secure payment options for all customers.",
+      "Yes. We use industry-standard encryption and never share your data with third parties. Your privacy and security are our top priorities.",
   },
   {
-    question: "What if I receive a damaged item?",
+    question: "Can I try NiaClone before purchasing?",
     answer:
-      "Please contact our support team within 48 hours of delivery with photos of the damaged item. We’ll arrange a replacement or refund.",
+      "Absolutely! Start your free trial instantly—no credit card required.",
   },
   {
-    question: "How can I contact customer support?",
+    question: "Who is NiaClone for?",
     answer:
-      "You can reach our support team via email at support@example.com or through the live chat on our website. We're available 24/7 to assist you.",
+      "NiaClone is built for startup founders, product managers, and tech early adopters who want to discover and evaluate SaaS products faster.",
   },
 ];
 
@@ -47,7 +47,7 @@ const FAQ = () => {
         Frequently Asked Questions
       </h2>
       <p className="mt-1.5 md:text-center xs:text-lg text-muted-foreground">
-        Quick answers to common questions about our products and services.
+        Answers to common questions about NiaClone and AI product discovery.
       </p>
 
       <div className="min-h-[550px] md:min-h-[320px] xl:min-h-[300px]">
@@ -60,7 +60,7 @@ const FAQ = () => {
             <AccordionItem
               key={question}
               value={`question-${index}`}
-              className="bg-accent py-1 px-4 rounded-xl border-none !mt-0 !mb-4 break-inside-avoid"
+              className="bg-accent/10 py-1 px-4 rounded-xl border-none !mt-0 !mb-4 break-inside-avoid"
             >
               <AccordionPrimitive.Header className="flex">
                 <AccordionPrimitive.Trigger
